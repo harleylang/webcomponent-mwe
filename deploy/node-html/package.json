@@ -1,0 +1,14 @@
+{
+  "name": "raw-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cp ../../lib/dist/index.js ./public/index.js && http-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.0.0"
+  }
+}
