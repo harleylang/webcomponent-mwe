@@ -1,20 +1,14 @@
+import Template from '@template';
+
 import css from './css';
 import html from './html';
 
-const template = document.createElement('template');
-
-template.innerHTML = `<style>${css}</style>${html}`;
-
-class WebText extends HTMLElement {
+class WebText extends Template {
 
     externalClass = false;
 
     constructor() {
-        super();
-        this.attachShadow({mode: 'open'});
-        if (this.shadowRoot !== null) {
-            this.shadowRoot.appendChild(template.content.cloneNode(true));
-        };
+        super({ css: css, html: html });
     };
 
     connectedCallback() {

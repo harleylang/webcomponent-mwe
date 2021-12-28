@@ -1,21 +1,17 @@
-import toggleStyling from './toggleStyling';
+import Template from '@template';
 
 import css from './css';
 import html from './html';
 
-const template = document.createElement('template');
+import toggleStyling from './toggleStyling';
 
-template.innerHTML = `<style>${css}</style>${html}`;
-
-class WebButtonLabel extends HTMLElement {
+class WebButtonLabel extends Template {
 
     externalClass = false;
 
     constructor() {
-        super();
-        this.attachShadow({mode: 'open'});
+        super({ css: css, html: html });
         if (this.shadowRoot !== null) {
-            this.shadowRoot.appendChild(template.content.cloneNode(true));
             const button = this.shadowRoot.querySelector("button");
             if (button !== null) {
                 button.addEventListener("click", this.handleClick);
