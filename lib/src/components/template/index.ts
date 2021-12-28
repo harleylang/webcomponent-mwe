@@ -10,12 +10,12 @@ class Template extends HTMLElement {
         css,
         html,
     }:{
-        css: string;
-        html: string;
+        css?: string;
+        html?: string;
     }) {
         super();
         const template = document.createElement('template');
-        template.innerHTML = `<style>${css}</style>${html}`;
+        template.innerHTML = `<style>${css ? css : ''}</style>${html ? html : ''}`;
         this.attachShadow({mode: 'open'});
         if (this.shadowRoot !== null) {
             this.shadowRoot.appendChild(template.content.cloneNode(true));
