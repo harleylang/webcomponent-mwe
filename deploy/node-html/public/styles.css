@@ -1,4 +1,4 @@
-web-button {
-    --paragraphColor: blue;
+web-button-label {
+    --textColor: blue;
     --buttonColor: blue;
 }

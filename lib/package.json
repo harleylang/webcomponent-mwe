@@ -5,8 +5,7 @@
   "main": "modules.js",
   "type": "module",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "b": "node ./esbuild.config.js"
+    "build": "node ./esbuild.config.js"
   },
   "author": "Harley Lang",
   "license": "ISC",

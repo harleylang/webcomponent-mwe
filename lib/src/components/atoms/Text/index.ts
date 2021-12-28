@@ -1,17 +1,14 @@
-import styles from './styles';
+import css from './css';
+import html from './html';
 
 const template = document.createElement('template');
 
-template.innerHTML = `
-    <style>${styles}</style>
-    <p></p>
-`;
+template.innerHTML = `<style>${css}</style>${html}`;
 
-class WebParagraph extends HTMLElement {
+class WebText extends HTMLElement {
 
     externalClass = false;
 
-    // No need for connectedCallback, see: https://stackoverflow.com/a/40494899/14198287
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
@@ -24,15 +21,15 @@ class WebParagraph extends HTMLElement {
         if (this.shadowRoot !== null) {
             let label = this.getAttribute('label');
             console.log(label)
-            const p = this.shadowRoot.querySelector("p");
-            if (p !== null && label !== null) {
-                p.innerHTML = label;
+            const text = this.shadowRoot.querySelector("span");
+            if (text !== null && label !== null) {
+                text.innerHTML = label;
             };
         };
     };
 
 };
 
-window.customElements.define('web-paragraph', WebParagraph);
+window.customElements.define('web-text', WebText);
 
-export default WebParagraph;
+export default WebText;

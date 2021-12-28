@@ -9,5 +9,10 @@
     "noEmit": true,
     "moduleResolution": "node",
     "rootDir": "src",
-  }
+    "baseUrl": "src",
+    "paths": {
+      "@atoms/*": ["components/atoms/*"],
+      "@molecules/*": ["components/molecules/*"],
+    }
+  },
 }

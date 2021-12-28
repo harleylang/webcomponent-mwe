@@ -1,20 +1,16 @@
 import toggleStyling from './toggleStyling';
 
-import styles from './styles';
+import css from './css';
+import html from './html';
 
 const template = document.createElement('template');
 
-template.innerHTML = `
-    <style>${styles}</style>
-    <button></button>
-    <span></span>
-`;
+template.innerHTML = `<style>${css}</style>${html}`;
 
-class WebButton extends HTMLElement {
+class WebButtonLabel extends HTMLElement {
 
     externalClass = false;
 
-    // No need for connectedCallback, see: https://stackoverflow.com/a/40494899/14198287
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
@@ -23,7 +19,6 @@ class WebButton extends HTMLElement {
             const button = this.shadowRoot.querySelector("button");
             if (button !== null) {
                 button.addEventListener("click", this.handleClick);
-                button.innerHTML = 'Toggle styling!';
             };
             this.toggleStyling();
         };
@@ -38,6 +33,6 @@ class WebButton extends HTMLElement {
 
 };
 
-window.customElements.define('web-button', WebButton);
+window.customElements.define('web-button-label', WebButtonLabel);
 
-export default WebButton;
+export default WebButtonLabel;

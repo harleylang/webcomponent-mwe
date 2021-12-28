@@ -1,2 +1,1 @@
-import * as components from './components';
-components;
+export * as components from './components';
