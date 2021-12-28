@@ -1,5 +1,6 @@
 import Template from '@template';
 
+import attrs from './attrs';
 import css from './css';
 import html from './html';
 
@@ -8,18 +9,11 @@ class WebText extends Template {
     externalClass = false;
 
     constructor() {
-        super({ css: css, html: html });
-    };
-
-    connectedCallback() {
-        if (this.shadowRoot !== null) {
-            let label = this.getAttribute('label');
-            console.log(label)
-            const text = this.shadowRoot.querySelector("span");
-            if (text !== null && label !== null) {
-                text.innerHTML = label;
-            };
-        };
+        super({ 
+            attrs: attrs, 
+            css: css, 
+            html: html 
+        });
     };
 
 };
