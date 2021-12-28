@@ -6,7 +6,7 @@ import IAttrs from "./IAttrs";
  */
 class Template extends HTMLElement {
 
-    attrs: IAttrs = {};
+    attrs: (keyof IAttrs)[] = [];
 
     externalClass = false;
 
@@ -22,21 +22,30 @@ class Template extends HTMLElement {
         super();
         const template = document.createElement('template');
         template.innerHTML = `<style>${css ? css : ''}</style>${html ? html : ''}`;
+        const clone = template.content.cloneNode(true);
         this.attachShadow({mode: 'open'});
-        if (this.shadowRoot !== null) {
-            this.shadowRoot.appendChild(template.content.cloneNode(true));
+        if (this.shadowRoot) this.shadowRoot.appendChild(clone);
+        if (attrs) {
+            let attrsKeys = Object.keys(attrs);
+            this.attrs = attrsKeys;
+            // bind attr fxs to class
+            for (let a = 0; a < attrsKeys.length; a++) {
+                let attr = attrsKeys[a];
+                let fx = attrs[attr];
+                (this as any)[attr] = fx;
+            }; 
         };
-        if (attrs) this.attrs = attrs;
+
+
     };
 
     connectedCallback() {
 
-        let attrs = Object.keys(this.attrs);
-        for (let a = 0; a < attrs.length; a++) {
-            let attr = attrs[a];
-            let fx = this.attrs[attr];
-            if (fx) fx(this);
-        };
+        // call binded attr fxs
+        for (let a = 0; a < this.attrs.length; a++) {
+            let attr = this.attrs[a];
+            (this as any)[attr]();
+        }; 
 
     };
 

@@ -1,2 +1,2 @@
-const html = `<span class='text'>Example text</span>`;
+const html = `<span class='text'>A text component</span>`;
 export default html; 

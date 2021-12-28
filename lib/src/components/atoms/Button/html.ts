@@ -1,2 +1,2 @@
-const html = `<button>Click me!</button>`;
+const html = `<button>A button component</button>`;
 export default html; 
