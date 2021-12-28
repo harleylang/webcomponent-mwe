@@ -2,7 +2,7 @@
   "name": "typescript-webcomponent-mwe",
   "version": "1.0.0",
   "description": "",
-  "main": "modules.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "build": "node ./esbuild.config.js"
