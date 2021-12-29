@@ -1,9 +1,9 @@
 # Web Component MWE
 
 This repository serves as a summary of my research into web components. Specifically, I'm interested in:
-- Light-weight typescript implementation of web components via esbuild,
-- Creating a styling API layer that will extend elements in the shadow DOM,
-- Exploring how a web component may be applied across various deployments (e.g., raw HTML, js frameworks, etc.)
+- Light-weight typescript implementation of a component library using web components that auto nest,
+- Testing the limitations of an API layer that will extend elements in the shadow DOM,
+- Exploring how a web component may be integrated across various deployments (e.g., raw HTML, js frameworks, etc.)
 
 ## Research:
 
