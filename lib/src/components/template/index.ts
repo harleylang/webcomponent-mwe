@@ -8,8 +8,6 @@ class Template extends HTMLElement {
 
     attrs: (keyof IAttrs)[] = [];
 
-    externalClass = false;
-
     constructor({
         attrs,
         css,
@@ -35,8 +33,6 @@ class Template extends HTMLElement {
                 (this as any)[attr] = fx;
             }; 
         };
-
-
     };
 
     connectedCallback() {

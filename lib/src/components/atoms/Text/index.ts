@@ -6,7 +6,11 @@ import html from './html';
 
 class WebText extends Template {
     constructor() {
-        super({ attrs: attrs, css: css, html: html });
+        super({ 
+            attrs: attrs, 
+            css: css, 
+            html: html 
+        });
     };
 };
 

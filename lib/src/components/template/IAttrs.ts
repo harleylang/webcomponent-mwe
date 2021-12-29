@@ -1,5 +1,5 @@
 interface IAttrs {
-    [key: string]: Function;
+    [attr: string]: Function;
 };
 
 export default IAttrs;

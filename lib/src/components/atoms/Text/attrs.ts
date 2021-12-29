@@ -1,4 +1,5 @@
 import Text from '.';
+import IAttrs from '@template/IAttrs';
 
 function setLabel(this: Text) {
     if (this.shadowRoot !== null) {
@@ -11,7 +12,7 @@ function setLabel(this: Text) {
     return this;
 };
 
-const attrs = {
+const attrs: IAttrs = {
     label: setLabel 
 };
 

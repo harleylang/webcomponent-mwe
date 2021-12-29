@@ -6,17 +6,12 @@ import html from './html';
 import toggleStyling from './toggleStyling';
 
 class WebButtonLabel extends Template {
-    constructor() {
-        super({ css: css, html: html });
-    };
-};
-
-/* class WebButtonLabel extends Template {
-
     externalClass = false;
-
     constructor() {
-        super({ css: css, html: html });
+        super({ 
+            css: css, 
+            html: html 
+        });
         if (this.shadowRoot !== null) {
             const button = this.shadowRoot.querySelector("button");
             if (button !== null) {
@@ -33,7 +28,7 @@ class WebButtonLabel extends Template {
 
     toggleStyling = toggleStyling;
 
-}; */
+};
 
 window.customElements.define('web-button-label', WebButtonLabel);
 
