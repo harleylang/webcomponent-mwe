@@ -13,7 +13,8 @@
     "paths": {
       "@atoms/*": ["components/atoms/*"],
       "@molecules/*": ["components/molecules/*"],
-      "@template": ["components/template/index.ts"],
+      "@template/*": ["components/template/*"],
+      "@template": ["components/template/index.js"],
     }
   },
 }

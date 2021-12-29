@@ -1,11 +1,13 @@
-import Template from '@template';
-
-import css from './css';
-import html from './html';
+import { readFileSync } from 'fs';
+import template from '@template';
 
 import toggleStyling from './toggleStyling';
 
-class WebButtonLabel extends Template {
+const css = readFileSync('css.css').toString();
+const html = readFileSync('html.html').toString();
+const WebButtonLabel = template({ css: css, html: html });
+
+/* class WebButtonLabel extends Template {
 
     externalClass = false;
 
@@ -27,7 +29,7 @@ class WebButtonLabel extends Template {
 
     toggleStyling = toggleStyling;
 
-};
+}; */
 
 window.customElements.define('web-button-label', WebButtonLabel);
 
