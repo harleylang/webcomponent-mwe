@@ -1,11 +1,15 @@
-import { readFileSync } from 'fs';
-import template from '@template';
+import Template from '@template';
+
+import css from './css';
+import html from './html';
 
 import toggleStyling from './toggleStyling';
 
-const css = readFileSync('css.css').toString();
-const html = readFileSync('html.html').toString();
-const WebButtonLabel = template({ css: css, html: html });
+class WebButtonLabel extends Template {
+    constructor() {
+        super({ css: css, html: html });
+    };
+};
 
 /* class WebButtonLabel extends Template {
 

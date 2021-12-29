@@ -14,7 +14,7 @@
       "@atoms/*": ["components/atoms/*"],
       "@molecules/*": ["components/molecules/*"],
       "@template/*": ["components/template/*"],
-      "@template": ["components/template/index.js"],
+      "@template": ["components/template/index.ts"],
     }
   },
 }
